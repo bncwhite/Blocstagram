@@ -1,5 +1,5 @@
 //
-//  BLCImagesTableViewController.h
+//  AppDelegate.h
 //  Blocstagram
 //
 //  Created by Bradley White on 10/17/14.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BLCImagesTableViewController : UITableViewController
+@interface BLCAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
 
 @end
+

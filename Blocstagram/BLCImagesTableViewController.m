@@ -86,23 +86,30 @@
     return self.canEdit;
 }
 
-
-
-
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     self.canEdit = !self.canEdit;
+    
+    //Update UIBarButtonItem Name
+    if (self.canEdit) {
+        self.navigationItem.rightBarButtonItem.title = @"Done";
+    }
+    else {
+        self.navigationItem.rightBarButtonItem.title = @"Edit";
+    }
     
     [self.tableView setEditing:self.canEdit animated:YES];
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         
-        [self.items removeObjectAtIndex:indexPath.row];
-        NSLog(@"%ld", self.items.count);
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView beginUpdates];
         
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.items removeObjectAtIndex:indexPath.row];
+        
+        [self.tableView endUpdates];
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
