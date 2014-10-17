@@ -25,6 +25,10 @@
 		1CDAB38A19F1738D00A5FE11 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CDAB38019F1738D00A5FE11 /* 9.jpg */; };
 		1CDAB38B19F1738D00A5FE11 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CDAB38119F1738D00A5FE11 /* 10.jpg */; };
 		1CDAB38E19F173C300A5FE11 /* BLCImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB38D19F173C300A5FE11 /* BLCImagesTableViewController.m */; };
+		1CDAB39119F1819A00A5FE11 /* BLCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB39019F1819A00A5FE11 /* BLCUser.m */; };
+		1CDAB39519F1822400A5FE11 /* BLCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB39419F1822400A5FE11 /* BLCMedia.m */; };
+		1CDAB39819F182B000A5FE11 /* BLCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB39719F182B000A5FE11 /* BLCComment.m */; };
+		1CDAB39B19F1833000A5FE11 /* BLCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB39A19F1833000A5FE11 /* BLCDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,14 @@
 		1CDAB38119F1738D00A5FE11 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		1CDAB38C19F173C300A5FE11 /* BLCImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCImagesTableViewController.h; sourceTree = "<group>"; };
 		1CDAB38D19F173C300A5FE11 /* BLCImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCImagesTableViewController.m; sourceTree = "<group>"; };
+		1CDAB38F19F1819A00A5FE11 /* BLCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCUser.h; sourceTree = "<group>"; };
+		1CDAB39019F1819A00A5FE11 /* BLCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCUser.m; sourceTree = "<group>"; };
+		1CDAB39319F1822400A5FE11 /* BLCMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMedia.h; sourceTree = "<group>"; };
+		1CDAB39419F1822400A5FE11 /* BLCMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMedia.m; sourceTree = "<group>"; };
+		1CDAB39619F182B000A5FE11 /* BLCComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCComment.h; sourceTree = "<group>"; };
+		1CDAB39719F182B000A5FE11 /* BLCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComment.m; sourceTree = "<group>"; };
+		1CDAB39919F1833000A5FE11 /* BLCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCDataSource.h; sourceTree = "<group>"; };
+		1CDAB39A19F1833000A5FE11 /* BLCDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,7 @@
 		1CDAB34519F1683D00A5FE11 = {
 			isa = PBXGroup;
 			children = (
+				1CDAB39219F1819E00A5FE11 /* Model */,
 				1CDAB35019F1683D00A5FE11 /* Blocstagram */,
 				1CDAB36A19F1683D00A5FE11 /* BlocstagramTests */,
 				1CDAB34F19F1683D00A5FE11 /* Products */,
@@ -160,6 +173,21 @@
 				1CDAB38119F1738D00A5FE11 /* 10.jpg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		1CDAB39219F1819E00A5FE11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CDAB38F19F1819A00A5FE11 /* BLCUser.h */,
+				1CDAB39019F1819A00A5FE11 /* BLCUser.m */,
+				1CDAB39319F1822400A5FE11 /* BLCMedia.h */,
+				1CDAB39419F1822400A5FE11 /* BLCMedia.m */,
+				1CDAB39619F182B000A5FE11 /* BLCComment.h */,
+				1CDAB39719F182B000A5FE11 /* BLCComment.m */,
+				1CDAB39919F1833000A5FE11 /* BLCDataSource.h */,
+				1CDAB39A19F1833000A5FE11 /* BLCDataSource.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +302,12 @@
 			files = (
 				1CDAB35A19F1683D00A5FE11 /* ViewController.m in Sources */,
 				1CDAB35719F1683D00A5FE11 /* AppDelegate.m in Sources */,
+				1CDAB39519F1822400A5FE11 /* BLCMedia.m in Sources */,
 				1CDAB35419F1683D00A5FE11 /* main.m in Sources */,
 				1CDAB38E19F173C300A5FE11 /* BLCImagesTableViewController.m in Sources */,
+				1CDAB39119F1819A00A5FE11 /* BLCUser.m in Sources */,
+				1CDAB39B19F1833000A5FE11 /* BLCDataSource.m in Sources */,
+				1CDAB39819F182B000A5FE11 /* BLCComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +500,7 @@
 				1CDAB37319F1683D00A5FE11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1CDAB37419F1683D00A5FE11 /* Build configuration list for PBXNativeTarget "BlocstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +509,7 @@
 				1CDAB37619F1683D00A5FE11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
