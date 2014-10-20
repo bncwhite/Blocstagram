@@ -94,7 +94,9 @@ static NSParagraphStyle *paragraphStyle;
         
         self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height + 20;
         self.commentLabelHeightConstraint.constant = commentLabelSize.height + 20;
-        
+    
+        if (self.mediaItem) self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+    
         // Hide the line between cells
         self.separatorInset = UIEdgeInsetsMake(0, 0, 0, CGRectGetWidth(self.bounds));
 }
@@ -105,7 +107,7 @@ static NSParagraphStyle *paragraphStyle;
     self.usernameAndCaptionLabel.attributedText = [self usernameAndCaptionString];
     self.commentLabel.attributedText = [self commentString];
     
-    self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+    
 }
 
 + (CGFloat) heightForMediaItem:(BLCMedia *)mediaItem width:(CGFloat)width {
