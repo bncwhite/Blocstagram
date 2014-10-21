@@ -21,6 +21,7 @@
 @property (nonatomic, assign) BOOL isRefreshing;
 @property (nonatomic, assign) BOOL isLoadingOlderItems;
 @property (nonatomic, assign) BOOL thereAreNoMoreOlderMessages;
+@property (nonatomic, strong) BLCMedia *lastAvailableMediaItem;
 
 @end
 
@@ -92,16 +93,31 @@
     if (self.isRefreshing == NO) {
         self.isRefreshing = YES;
         
-        NSString *minID = [[self.mediaItems firstObject] idNumber];
-        NSDictionary *parameters = @{@"min_id": minID};
+        if (self.mediaItems.count != 0) {
         
-        [self populateDataWithParameters:parameters completionHandler:^(NSError *error) {
-            self.isRefreshing = NO;
+            NSString *minID = [[self.mediaItems firstObject] idNumber];
+            NSDictionary *parameters = @{@"min_id": minID};
             
-            if (completionHandler) {
-                completionHandler(error);
-            }
-        }];
+            [self populateDataWithParameters:parameters completionHandler:^(NSError *error) {
+                self.isRefreshing = NO;
+                
+                if (completionHandler) {
+                    completionHandler(error);
+                }
+            }];
+        } else {
+            
+            NSString *minID = [self.lastAvailableMediaItem idNumber];
+            NSDictionary *parameters = @{@"min_id": minID};
+            
+            [self populateDataWithParameters:parameters completionHandler:^(NSError *error) {
+                self.isRefreshing = NO;
+                
+                if (completionHandler) {
+                    completionHandler(error);
+                }
+            }];
+        }
     }
 }
 
@@ -192,6 +208,9 @@
             [tmpMediaItems addObject:mediaItem];
             [self downloadImageForMediaItem:mediaItem];
         }
+        
+        self.lastAvailableMediaItem = mediaItem;
+        NSLog(@"set as: %@ and number left: %lu", self.lastAvailableMediaItem, self.mediaItems.count);
     }
     
     NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
