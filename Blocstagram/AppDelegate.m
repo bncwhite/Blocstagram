@@ -32,12 +32,7 @@
         [navVC setViewControllers:@[imagesVC] animated:YES];
     }];
     
-    loginVC.title = @"Login";
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStyleDone target:self action:nil];
-    
-    loginVC.navigationItem.leftBarButtonItem = backButton;
-    
+        
     //navVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] init];
     
     self.window.rootViewController = navVC;
