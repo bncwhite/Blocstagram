@@ -10,10 +10,18 @@
 
 @class BLCMedia;
 
+@protocol BLCMediaFullScreenViewControllerDelegate <NSObject>
+
+- (void) shareMediaNow;
+
+@end
+
 @interface BLCMediaFullScreenViewController : UIViewController
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView;
+
+@property (nonatomic, weak) id <BLCMediaFullScreenViewControllerDelegate> delegate;
 
 - (instancetype) initWithMedia:(BLCMedia *)media;
 

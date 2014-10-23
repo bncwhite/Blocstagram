@@ -15,7 +15,7 @@
 #import "BLCMediaFullScreenViewController.h"
 #import "BLCMediaFullScreenAnimator.h"
 
-@interface BLCImagesTableViewController () <BLCMediaTableViewCellDelegate, UIViewControllerTransitioningDelegate>
+@interface BLCImagesTableViewController () <BLCMediaTableViewCellDelegate, UIViewControllerTransitioningDelegate, BLCMediaFullScreenViewControllerDelegate>
 
 @property (nonatomic) BOOL canEdit;
 
@@ -34,6 +34,7 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
+    
 }
 
 - (void) refreshControlDidFire:(UIRefreshControl *) sender {
@@ -52,13 +53,6 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        
-//        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
-//                                                                 style:UIBarButtonItemStylePlain
-//                                                                target:self
-//                                                                action:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)];
-//        
-//        self.navigationItem.rightBarButtonItem = item;
         
     }
     return self;
@@ -109,34 +103,6 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //self.canEdit = !self.canEdit;
-    /*
-    //Update UIBarButtonItem Name
-    if (self.canEdit) {
-        self.navigationItem.rightBarButtonItem.title = @"Done";
-    }
-    else {
-        self.navigationItem.rightBarButtonItem.title = @"Edit";
-    }
-     */
-    
-    //[self.tableView setEditing:self.canEdit animated:YES];
-    /*
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        
-        [self.tableView beginUpdates];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [self.items removeObjectAtIndex:indexPath.row];
-        
-        [self.tableView endUpdates];
-        
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    } 
-     */
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
@@ -206,28 +172,35 @@
     }
 }
 
-#pragma mark - UIScrollViewDelegate
-/*
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self infiniteScrollIfNecessary];
+#pragma mark BLCMediaFullScreenViewControllerDelegate
+- (void) shareMediaNow
+{
+    
+    [self cell:self.desiredCell didLongPressImageView:self.lastTappedImageView];
 }
-*/
+
+
+#pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self infiniteScrollIfNecessary];
 }
 
+
+
 #pragma mark - BLCMediaTableViewCellDelegate
 
 - (void) cell:(BLCMediaTableViewCell *)cell didTapImageView:(UIImageView *)imageView {
     
     self.lastTappedImageView = imageView;
+    self.desiredCell = cell;
     
     BLCMediaFullScreenViewController *fullScreenVC = [[BLCMediaFullScreenViewController alloc] initWithMedia:cell.mediaItem];
     
     fullScreenVC.transitioningDelegate = self;
     fullScreenVC.modalPresentationStyle = UIModalPresentationCustom;
+    fullScreenVC.delegate = self;
     
     [self presentViewController:fullScreenVC animated:YES completion:nil];
 }

@@ -8,6 +8,8 @@
 
 #import "BLCMediaFullScreenViewController.h"
 #import "BLCMedia.h"
+#import "BLCImagesTableViewController.h"
+#import "BLCMediaTableViewCell.h"
 
 @interface BLCMediaFullScreenViewController () <UIScrollViewDelegate>
 
@@ -43,6 +45,31 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [shareButton addTarget:self action:@selector(shareMediaItem) forControlEvents:UIControlEventTouchUpInside];
+    
+    [shareButton sizeToFit];
+    double buttonWidth = shareButton.frame.size.width + 150;
+    double buttonHeight = shareButton.frame.size.height;
+    double buttonOriginX = CGRectGetMaxX(self.view.bounds) - buttonWidth;
+    double buttonOriginY = CGRectGetMinY(self.view.bounds) + buttonHeight;
+    shareButton.frame = CGRectMake(buttonOriginX, buttonOriginY,buttonWidth, buttonHeight);
+    
+    [shareButton setTitle:@"Return and Share" forState:UIControlStateNormal];
+    [shareButton setBackgroundColor:[UIColor darkGrayColor]];
+    [shareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview: shareButton];
+}
+
+- (void)shareMediaItem
+{
+    NSLog(@"Test");
+    
+    [self dismissViewControllerAnimated:YES completion:^(){
+        [self.delegate shareMediaNow];
+    }];
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -110,7 +137,7 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     [self centerScrollView];
-}
+}       
 
 #pragma mark - Gesture Recognizers
 

@@ -20,11 +20,11 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     if (self.presenting) {
+        
         BLCMediaFullScreenViewController *fullScreenVC = (BLCMediaFullScreenViewController *)toViewController;
         
         fromViewController.view.userInteractionEnabled = NO;
         
-        [transitionContext.containerView addSubview:fromViewController.view];
         [transitionContext.containerView addSubview:toViewController.view];
         
         CGRect startFrame = [transitionContext.containerView convertRect:self.cellImageView.bounds fromView:self.cellImageView];
@@ -38,14 +38,13 @@
             
             fullScreenVC.view.frame = endFrame;
             [fullScreenVC centerScrollView];
+            
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];
     }
     else {
-        [transitionContext.containerView addSubview:toViewController.view];
-        [transitionContext.containerView addSubview:fromViewController.view];
-        
+    
         BLCMediaFullScreenViewController *fullScreenVC = (BLCMediaFullScreenViewController *)fromViewController;
         
         CGRect endFrame = [transitionContext.containerView convertRect:self.cellImageView.bounds fromView:self.cellImageView];

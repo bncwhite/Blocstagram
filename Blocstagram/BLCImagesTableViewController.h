@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BLCMediaTableViewCell.h"
 
 @interface BLCImagesTableViewController : UITableViewController
 
+@property (nonatomic) BLCMediaTableViewCell *desiredCell;
 @end
