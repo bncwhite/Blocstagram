@@ -64,7 +64,6 @@
 
 - (void)shareMediaItem
 {
-    NSLog(@"Test");
     
     [self dismissViewControllerAnimated:YES completion:^(){
         [self.delegate shareMediaNow];

@@ -12,4 +12,5 @@
 @interface BLCImagesTableViewController : UITableViewController
 
 @property (nonatomic) BLCMediaTableViewCell *desiredCell;
+
 @end

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "BLCImagesTableViewController.h"
 
 @class BLCMedia;
 
@@ -16,13 +18,15 @@ typedef void (^BLCNewItemCompletionBlock)(NSError *error);
 
 +(instancetype) sharedInstance;
 
++ (NSString *) instagramClientID;
+
 @property (nonatomic, strong, readonly) NSMutableArray *mediaItems;
 
 @property (nonatomic, strong, readonly) NSString *accessToken;
 
-+ (NSString *) instagramClientID;
-
 - (void) deleteMediaItem:(BLCMedia *)item;
+
+- (void) downloadImageForMediaItem:(BLCMedia *)mediaItem;
 
 - (void) requestNewItemsWithCompletionHandler:(BLCNewItemCompletionBlock)completionHandler;
 

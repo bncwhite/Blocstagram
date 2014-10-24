@@ -37,6 +37,11 @@
     
 }
 
+-(void)reDownloadImage:(BLCMedia *)media
+{
+    
+}
+
 - (void) refreshControlDidFire:(UIRefreshControl *) sender {
     [[BLCDataSource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
         [sender endRefreshing];
@@ -82,7 +87,6 @@
     BLCMediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
     cell.delegate = self;
     cell.mediaItem = self.items[indexPath.row];
-    
     return cell;
 }
 
@@ -175,7 +179,6 @@
 #pragma mark BLCMediaFullScreenViewControllerDelegate
 - (void) shareMediaNow
 {
-    
     [self cell:self.desiredCell didLongPressImageView:self.lastTappedImageView];
 }
 
@@ -186,8 +189,6 @@
 {
     [self infiniteScrollIfNecessary];
 }
-
-
 
 #pragma mark - BLCMediaTableViewCellDelegate
 
@@ -220,6 +221,14 @@
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
         [self presentViewController:activityVC animated:YES completion:nil];
     }
+}
+
+-(void)cell:(BLCMediaTableViewCell *)cell didDoubleTouchToRetryImageDownload:(UIImageView *)imageView
+{
+    BLCMedia *mediaItem = cell.mediaItem;
+    
+    [[BLCDataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+    NSLog(@"cell: doubleTouch:");
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
