@@ -224,7 +224,7 @@
         }
         
         self.lastAvailableMediaItem = mediaItem;
-        NSLog(@"set as: %@ and number left: %lu", self.lastAvailableMediaItem, self.mediaItems.count);
+        NSLog(@"set as: %@ and number left: %lu", self.lastAvailableMediaItem, (unsigned long)self.mediaItems.count);
     }
     
     NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
