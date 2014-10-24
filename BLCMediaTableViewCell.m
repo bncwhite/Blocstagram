@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTouchGestureRecognizer;
 
 @end
 
@@ -147,6 +148,10 @@ static NSParagraphStyle *paragraphStyle;
         self.longPressGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.longPressGestureRecognizer];
         
+        self.doubleTouchGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTouchPressed:)];
+        self.doubleTouchGestureRecognizer.numberOfTouchesRequired = 2;
+        [self addGestureRecognizer:self.doubleTouchGestureRecognizer];
+        
         self.usernameAndCaptionLabel = [UILabel new];
         self.commentLabel = [UILabel new];
         self.commentLabel.numberOfLines = 0;
@@ -223,6 +228,10 @@ static NSParagraphStyle *paragraphStyle;
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self.delegate cell:self didLongPressImageView:self.mediaImageView];
     }
+}
+
+- (void) doubleTouchPressed:(UITapGestureRecognizer *)sender {
+    [self.delegate cell:self didDoubleTouchToRetryImageDownload:self.mediaImageView];
 }
 
 @end
