@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C399E6319F5768100544087 /* BLCLoginViewController.m */; };
+		1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */; };
+		1CB48E241A05A83C00E0F69D /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */; };
 		1CBF861719F739A200B31F53 /* BLCMediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */; };
 		1CBF861A19F8373900B31F53 /* BLCMediaFullScreenAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF861919F8373900B31F53 /* BLCMediaFullScreenAnimator.m */; };
 		1CDAB35419F1683D00A5FE11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB35319F1683D00A5FE11 /* main.m */; };
@@ -50,6 +52,10 @@
 		0CA11E51894993D0DB120213 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1C399E6219F5768100544087 /* BLCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLoginViewController.h; sourceTree = "<group>"; };
 		1C399E6319F5768100544087 /* BLCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLoginViewController.m; sourceTree = "<group>"; };
+		1CB48E1F1A059AE600E0F69D /* BLCCircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCCircleSpinnerView.h; path = Blocstagram/BLCCircleSpinnerView.h; sourceTree = "<group>"; };
+		1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCCircleSpinnerView.m; path = Blocstagram/BLCCircleSpinnerView.m; sourceTree = "<group>"; };
+		1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
+		1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLikeButton.m; sourceTree = "<group>"; };
 		1CBF861519F739A200B31F53 /* BLCMediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaFullScreenViewController.h; sourceTree = "<group>"; };
 		1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaFullScreenViewController.m; sourceTree = "<group>"; };
 		1CBF861819F8373900B31F53 /* BLCMediaFullScreenAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaFullScreenAnimator.h; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 				1C399E6319F5768100544087 /* BLCLoginViewController.m */,
 				1CBF861819F8373900B31F53 /* BLCMediaFullScreenAnimator.h */,
 				1CBF861919F8373900B31F53 /* BLCMediaFullScreenAnimator.m */,
+				1CB48E1F1A059AE600E0F69D /* BLCCircleSpinnerView.h */,
+				1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */,
+				1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */,
+				1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -379,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB48E241A05A83C00E0F69D /* BLCLikeButton.m in Sources */,
 				1CDAB35A19F1683D00A5FE11 /* ViewController.m in Sources */,
 				1CBF861719F739A200B31F53 /* BLCMediaFullScreenViewController.m in Sources */,
 				1CDAB35719F1683D00A5FE11 /* AppDelegate.m in Sources */,
@@ -390,6 +401,7 @@
 				1CDAB39119F1819A00A5FE11 /* BLCUser.m in Sources */,
 				1CDAB39B19F1833000A5FE11 /* BLCDataSource.m in Sources */,
 				1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */,
+				1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */,
 				1CDAB39819F182B000A5FE11 /* BLCComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

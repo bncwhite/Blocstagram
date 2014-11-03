@@ -206,7 +206,7 @@
 
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView.dragging) {
+    if (!scrollView.dragging) {
         
         for (BLCMediaTableViewCell *cell in [self.tableView visibleCells]) {
             
@@ -265,6 +265,12 @@
     
     [[BLCDataSource sharedInstance] downloadImageForMediaItem:mediaItem];
     NSLog(@"cell: doubleTouch:");
+}
+
+- (void) cellDidPressLikeButton:(BLCMediaTableViewCell *)cell {
+    [[BLCDataSource sharedInstance] toggleLikeOnMediaItem:cell.mediaItem];
+    [cell.mediaItem setLikeState:cell.mediaItem.likeState];
+     NSLog(@"Calling delegate");
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

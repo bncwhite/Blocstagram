@@ -45,6 +45,11 @@
         }
         
         self.comments = commentsArray;
+        self.numberOfLikes = 0;
+        
+        BOOL userHasLiked = [mediaDictionary[@"user_has_liked"] boolValue];
+        
+        self.likeState = userHasLiked ? BLCLikeStateLiked : BLCLikeStateNotLiked;
     }
     
     return self;
@@ -62,6 +67,8 @@
         self.image = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(image))];
         self.caption = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(caption))];
         self.comments = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(comments))];
+        self.likeState = [aDecoder decodeIntegerForKey:NSStringFromSelector(@selector(likeState))];
+        self.numberOfLikes = [aDecoder decodeIntForKey:NSStringFromSelector(@selector(numberOfLikes))];
         
         if (self.image) {
             self.downloadState = BLCMediaDownloadStateHasImage;
@@ -82,6 +89,8 @@
     [aCoder encodeObject:self.image forKey:NSStringFromSelector(@selector(image))];
     [aCoder encodeObject:self.caption forKey:NSStringFromSelector(@selector(caption))];
     [aCoder encodeObject:self.comments forKey:NSStringFromSelector(@selector(comments))];
+    [aCoder encodeInteger:self.likeState forKey:NSStringFromSelector(@selector(likeState))];
+    [aCoder encodeInt:self.numberOfLikes forKey:NSStringFromSelector(@selector(numberOfLikes))];
 }
 
 @end
