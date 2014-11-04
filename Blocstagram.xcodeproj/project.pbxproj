@@ -10,6 +10,7 @@
 		1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C399E6319F5768100544087 /* BLCLoginViewController.m */; };
 		1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */; };
 		1CB48E241A05A83C00E0F69D /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */; };
+		1CB48E281A095F9800E0F69D /* BLCComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E271A095F9800E0F69D /* BLCComposeCommentView.m */; };
 		1CBF861719F739A200B31F53 /* BLCMediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */; };
 		1CBF861A19F8373900B31F53 /* BLCMediaFullScreenAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF861919F8373900B31F53 /* BLCMediaFullScreenAnimator.m */; };
 		1CDAB35419F1683D00A5FE11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB35319F1683D00A5FE11 /* main.m */; };
@@ -56,6 +57,8 @@
 		1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCCircleSpinnerView.m; path = Blocstagram/BLCCircleSpinnerView.m; sourceTree = "<group>"; };
 		1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
 		1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLikeButton.m; sourceTree = "<group>"; };
+		1CB48E261A095F9800E0F69D /* BLCComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCComposeCommentView.h; sourceTree = "<group>"; };
+		1CB48E271A095F9800E0F69D /* BLCComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComposeCommentView.m; sourceTree = "<group>"; };
 		1CBF861519F739A200B31F53 /* BLCMediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaFullScreenViewController.h; sourceTree = "<group>"; };
 		1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaFullScreenViewController.m; sourceTree = "<group>"; };
 		1CBF861819F8373900B31F53 /* BLCMediaFullScreenAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaFullScreenAnimator.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				1CDAB39419F1822400A5FE11 /* BLCMedia.m */,
 				1CDAB39619F182B000A5FE11 /* BLCComment.h */,
 				1CDAB39719F182B000A5FE11 /* BLCComment.m */,
+				1CB48E261A095F9800E0F69D /* BLCComposeCommentView.h */,
+				1CB48E271A095F9800E0F69D /* BLCComposeCommentView.m */,
 				1CDAB39919F1833000A5FE11 /* BLCDataSource.h */,
 				1CDAB39A19F1833000A5FE11 /* BLCDataSource.m */,
 				1C399E6219F5768100544087 /* BLCLoginViewController.h */,
@@ -403,6 +408,7 @@
 				1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */,
 				1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */,
 				1CDAB39819F182B000A5FE11 /* BLCComment.m in Sources */,
+				1CB48E281A095F9800E0F69D /* BLCComposeCommentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

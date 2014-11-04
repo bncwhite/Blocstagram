@@ -12,5 +12,7 @@
 @interface BLCImagesTableViewController : UITableViewController
 
 @property (nonatomic) BLCMediaTableViewCell *desiredCell;
+@property (nonatomic, weak) UIView *lastSelectedCommentView;
+@property (nonatomic, assign) CGFloat lastKeyboardAdjustment;
 
 @end
