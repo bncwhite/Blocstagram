@@ -327,6 +327,7 @@
 
 - (void)keyboardWillShow:(NSNotification *)notification
 {
+    NSLog(@"show");
     // Get the frame of the keyboard within self.view's coordinate system
     NSValue *frameValue = notification.userInfo[UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardFrameInScreenCoordinates = frameValue.CGRectValue;
@@ -344,7 +345,7 @@
     CGFloat commentViewY = CGRectGetMinY(commentViewFrameInViewCoordinates);
     CGFloat difference = commentViewY - keyboardY;
     
-    if (difference > 0) {
+    if (difference != 0) {
         heightToScroll += difference;
     }
     
@@ -352,9 +353,12 @@
         // The two frames intersect (the keyboard would block the view)
         CGRect intersectionRect = CGRectIntersection(keyboardFrameInViewCoordinates, commentViewFrameInViewCoordinates);
         heightToScroll += CGRectGetHeight(intersectionRect);
+        
     }
     
-    if (heightToScroll > 0) {
+    NSLog(@"keyboardY: %f, commentViewY: %f, difference: %f, heightToScroll: %f", keyboardY, commentViewY, difference, heightToScroll);
+    
+    if (heightToScroll != 0) {
         contentInsets.bottom += heightToScroll;
         scrollIndicatorInsets.bottom += heightToScroll;
         contentOffset.y += heightToScroll;
@@ -378,6 +382,7 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification
 {
+    NSLog(@"hide");
     UIEdgeInsets contentInsets = self.tableView.contentInset;
     contentInsets.bottom -= self.lastKeyboardAdjustment;
     
