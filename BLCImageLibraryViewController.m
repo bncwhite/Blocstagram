@@ -10,7 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "BLCCropImageViewController.h"
 
-@interface BLCImageLibraryViewController () <BLCCropImageViewControllerDelegate>
+@interface BLCImageLibraryViewController () <BLCCropImageViewControllerDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) ALAssetsLibrary *library;
 
@@ -59,15 +59,41 @@
     [super viewWillLayoutSubviews];
     
     CGFloat width = CGRectGetWidth(self.view.frame);
-    CGFloat minWidth = 100;
-    NSInteger divisor = width / minWidth;
-    CGFloat cellSize = width / divisor;
     
     UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    flowLayout.itemSize = CGSizeMake(cellSize, cellSize);
-    flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.minimumLineSpacing = 0;
+    //flowLayout.itemSize = CGSizeMake(cellSize, cellSize);
+    flowLayout.minimumInteritemSpacing = 10;
+    flowLayout.minimumLineSpacing = 10;
     flowLayout.headerReferenceSize = CGSizeMake(width, 30);
+    flowLayout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.groups removeAllObjects];
+    [self.arraysOfAssets removeAllObjects];
+    
+    [self.library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos | ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+        if (group) {
+            [self.groups addObject:group];
+            NSMutableArray *assets = [NSMutableArray array];
+            [self.arraysOfAssets addObject:assets];
+            
+            [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                if (result) {
+                    [assets addObject:result];
+                }
+            }];
+            
+            [self.collectionView reloadData];
+        }
+    } failureBlock:^(NSError *error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"OK button") otherButtonTitles:nil];
+        [alert show];
+        
+        [self.collectionView reloadData];
+    }];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
@@ -90,6 +116,16 @@
     }
     
     return 0;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat width = CGRectGetWidth(self.view.frame);
+    CGFloat minWidth = arc4random_uniform(50) + 50;
+    NSInteger divisor = width / minWidth;
+    CGFloat cellSize = width / divisor;
+    
+    return CGSizeMake(cellSize, cellSize);
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -177,7 +213,7 @@
     }
     
     BLCCropImageViewController *cropVC = [[BLCCropImageViewController alloc] initWithImage:imageToCrop];
-    cropVC.delegate = self;
+    cropVC.subclassDelegate = self;
     [self.navigationController pushViewController:cropVC animated:YES];
 }
 

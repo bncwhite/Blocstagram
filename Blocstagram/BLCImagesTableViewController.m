@@ -19,6 +19,9 @@
 
 @interface BLCImagesTableViewController () <BLCMediaTableViewCellDelegate, UIViewControllerTransitioningDelegate, BLCMediaFullScreenViewControllerDelegate, BLCCameraViewControllerDelegate, BLCImageLibraryViewControllerDelegate>
 
+//@interface BLCImagesTableViewController () <BLCMediaTableViewCellDelegate, UIViewControllerTransitioningDelegate, BLCCameraViewControllerDelegate, BLCImageLibraryViewControllerDelegate>
+
+
 @property (nonatomic) BOOL canEdit;
 
 @property (nonatomic, weak) UIImageView *lastTappedImageView;

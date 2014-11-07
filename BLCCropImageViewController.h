@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Bradley White. All rights reserved.
 //
 
-
+#import <UIKit/UIKit.h>
 #import "BLCMediaFullScreenViewController.h"
 
 @class BLCCropImageViewController;
@@ -21,6 +21,6 @@
 
 - (instancetype) initWithImage:(UIImage *)sourceImage;
 
-@property (nonatomic, weak) NSObject <BLCCropImageViewControllerDelegate> *delegate;
+@property (nonatomic, weak) NSObject <BLCCropImageViewControllerDelegate> *subclassDelegate;
 
 @end

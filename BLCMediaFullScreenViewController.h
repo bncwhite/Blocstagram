@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) BLCMedia *media;
 
-@property (nonatomic, weak) id <BLCMediaFullScreenViewControllerDelegate> delegate;
+@property (nonatomic, weak) NSObject <BLCMediaFullScreenViewControllerDelegate> *delegate;
 
 - (instancetype) initWithMedia:(BLCMedia *)media;
 

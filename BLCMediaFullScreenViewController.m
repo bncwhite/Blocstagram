@@ -10,6 +10,7 @@
 #import "BLCMedia.h"
 #import "BLCImagesTableViewController.h"
 #import "BLCMediaTableViewCell.h"
+#import "BLCCropImageViewController.h"
 
 @interface BLCMediaFullScreenViewController () <UIScrollViewDelegate>
 
@@ -45,6 +46,13 @@
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     
+    if (![self isKindOfClass:[BLCCropImageViewController class]]) {
+        [self addShareButton];
+    }
+}
+
+- (void) addShareButton
+{
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [shareButton addTarget:self action:@selector(shareMediaItem) forControlEvents:UIControlEventTouchUpInside];
     
@@ -59,6 +67,7 @@
     [shareButton setBackgroundColor:[UIColor darkGrayColor]];
     [shareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview: shareButton];
+
 }
 
 - (void)shareMediaItem

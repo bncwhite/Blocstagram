@@ -56,7 +56,7 @@
         view.backgroundColor = [UIColor whiteColor];
         [array addObject:view];
     }
-    
+
     return array;
 }
 

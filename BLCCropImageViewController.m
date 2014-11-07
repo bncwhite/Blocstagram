@@ -16,6 +16,9 @@
 @property (nonatomic, strong) BLCCropBox *cropBox;
 @property (nonatomic, assign) BOOL hasLoadedOnce;
 
+@property (nonatomic, strong) UIToolbar *topView;
+@property (nonatomic, strong) UIToolbar *bottomView;
+
 @end
 
 @implementation BLCCropImageViewController
@@ -24,10 +27,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.view.clipsToBounds = YES;
     
-    [self.view addSubview:self.cropBox];
+    for (UIView *view in @[self.topView, self.cropBox, self.bottomView]) {
+        [self.view addSubview:view];
+    }
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Crop", @"Crop command") style:UIBarButtonItemStyleDone target:self action:@selector(cropPressed:)];
     
@@ -37,10 +42,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
-}
-
-- (void) cancelPressed:(UIBarButtonItem *)sender {
-    [self.delegate imageLibraryViewController:self didCompleteWithImage:nil];
 }
 
 - (void) viewWillLayoutSubviews {
@@ -58,6 +59,21 @@
     self.scrollView.frame = self.cropBox.frame;
     self.scrollView.clipsToBounds = NO;
     
+    CGFloat width = CGRectGetWidth(self.view.bounds);
+    
+    CGFloat height = CGRectGetMinY(self.cropBox.frame) - CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    self.topView.frame = CGRectMake(0, CGRectGetMaxY(self.navigationController.navigationBar.frame), width, height);
+    
+    UIColor *whiteBG = [UIColor colorWithWhite:1.0 alpha:.15];
+    self.topView.barTintColor = whiteBG;
+    self.bottomView.barTintColor = whiteBG;
+    self.topView.alpha = 0.5;
+    self.bottomView.alpha = 0.5;
+    
+    CGFloat yOriginOfBottomView = CGRectGetMaxY(self.topView.frame) + width;
+    CGFloat heightOfBottomView = CGRectGetHeight(self.view.frame) - yOriginOfBottomView;
+    self.bottomView.frame = CGRectMake(0, yOriginOfBottomView, width, heightOfBottomView);
+    
     [self recalculateZoomScale];
     
     if (self.hasLoadedOnce == NO) {
@@ -74,6 +90,8 @@
         self.media.image = sourceImage;
         
         self.cropBox = [BLCCropBox new];
+        self.topView = [UIToolbar new];
+        self.bottomView = [UIToolbar new];
     }
     
     return self;
@@ -90,7 +108,7 @@
     UIImage *scrollViewCrop = [self.media.image imageWithFixedOrientation];
     scrollViewCrop = [scrollViewCrop imageCroppedToRect:visibleRect];
     
-    [self.delegate cropControllerFinishedWithImage:scrollViewCrop];
+    [self.subclassDelegate cropControllerFinishedWithImage:scrollViewCrop];
 }
 
 @end
