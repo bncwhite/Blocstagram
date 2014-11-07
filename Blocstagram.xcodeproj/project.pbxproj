@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C399E6319F5768100544087 /* BLCLoginViewController.m */; };
+		1C77183A1A0D7903001F6D80 /* BLCPostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7718391A0D7903001F6D80 /* BLCPostToInstagramViewController.m */; };
 		1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */; };
 		1CB48E241A05A83C00E0F69D /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */; };
 		1CB48E281A095F9800E0F69D /* BLCComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E271A095F9800E0F69D /* BLCComposeCommentView.m */; };
@@ -23,7 +24,6 @@
 		1CDAB35419F1683D00A5FE11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB35319F1683D00A5FE11 /* main.m */; };
 		1CDAB35719F1683D00A5FE11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB35619F1683D00A5FE11 /* AppDelegate.m */; };
 		1CDAB35A19F1683D00A5FE11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB35919F1683D00A5FE11 /* ViewController.m */; };
-		1CDAB35D19F1683D00A5FE11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDAB35B19F1683D00A5FE11 /* Main.storyboard */; };
 		1CDAB35F19F1683D00A5FE11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CDAB35E19F1683D00A5FE11 /* Images.xcassets */; };
 		1CDAB36219F1683D00A5FE11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDAB36019F1683D00A5FE11 /* LaunchScreen.xib */; };
 		1CDAB36E19F1683D00A5FE11 /* BlocstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB36D19F1683D00A5FE11 /* BlocstagramTests.m */; };
@@ -60,6 +60,8 @@
 		0CA11E51894993D0DB120213 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1C399E6219F5768100544087 /* BLCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLoginViewController.h; sourceTree = "<group>"; };
 		1C399E6319F5768100544087 /* BLCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLoginViewController.m; sourceTree = "<group>"; };
+		1C7718381A0D7903001F6D80 /* BLCPostToInstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCPostToInstagramViewController.h; sourceTree = "<group>"; };
+		1C7718391A0D7903001F6D80 /* BLCPostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCPostToInstagramViewController.m; sourceTree = "<group>"; };
 		1CB48E1F1A059AE600E0F69D /* BLCCircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCCircleSpinnerView.h; path = Blocstagram/BLCCircleSpinnerView.h; sourceTree = "<group>"; };
 		1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCCircleSpinnerView.m; path = Blocstagram/BLCCircleSpinnerView.m; sourceTree = "<group>"; };
 		1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
@@ -91,7 +93,6 @@
 		1CDAB35619F1683D00A5FE11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1CDAB35819F1683D00A5FE11 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1CDAB35919F1683D00A5FE11 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1CDAB35C19F1683D00A5FE11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CDAB35E19F1683D00A5FE11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1CDAB36119F1683D00A5FE11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1CDAB36719F1683D00A5FE11 /* BlocstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,8 +108,8 @@
 		1CDAB37F19F1738D00A5FE11 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		1CDAB38019F1738D00A5FE11 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		1CDAB38119F1738D00A5FE11 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
-		1CDAB38C19F173C300A5FE11 /* BLCImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCImagesTableViewController.h; sourceTree = "<group>"; };
-		1CDAB38D19F173C300A5FE11 /* BLCImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCImagesTableViewController.m; sourceTree = "<group>"; };
+		1CDAB38C19F173C300A5FE11 /* BLCImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCImagesTableViewController.h; path = Blocstagram/BLCImagesTableViewController.h; sourceTree = "<group>"; };
+		1CDAB38D19F173C300A5FE11 /* BLCImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCImagesTableViewController.m; path = Blocstagram/BLCImagesTableViewController.m; sourceTree = "<group>"; };
 		1CDAB38F19F1819A00A5FE11 /* BLCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCUser.h; sourceTree = "<group>"; };
 		1CDAB39019F1819A00A5FE11 /* BLCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCUser.m; sourceTree = "<group>"; };
 		1CDAB39319F1822400A5FE11 /* BLCMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMedia.h; sourceTree = "<group>"; };
@@ -169,9 +170,6 @@
 				1CDAB37719F1736800A5FE11 /* Images */,
 				1CDAB35519F1683D00A5FE11 /* AppDelegate.h */,
 				1CDAB35619F1683D00A5FE11 /* AppDelegate.m */,
-				1CDAB38C19F173C300A5FE11 /* BLCImagesTableViewController.h */,
-				1CDAB38D19F173C300A5FE11 /* BLCImagesTableViewController.m */,
-				1CDAB35B19F1683D00A5FE11 /* Main.storyboard */,
 				1CDAB35E19F1683D00A5FE11 /* Images.xcassets */,
 				1CDAB36019F1683D00A5FE11 /* LaunchScreen.xib */,
 				1CDAB35119F1683D00A5FE11 /* Supporting Files */,
@@ -227,38 +225,42 @@
 		1CDAB39219F1819E00A5FE11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1CDAB39C19F18AA100A5FE11 /* BLCMediaTableViewCell.h */,
-				1CDAB39D19F18AA100A5FE11 /* BLCMediaTableViewCell.m */,
-				1CBF861519F739A200B31F53 /* BLCMediaFullScreenViewController.h */,
-				1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */,
-				1CB48E381A0AC00700E0F69D /* BLCCropImageViewController.h */,
-				1CB48E391A0AC00700E0F69D /* BLCCropImageViewController.m */,
+				1CB48E291A09C4E200E0F69D /* BLCCameraToolbar.h */,
+				1CB48E2A1A09C4E200E0F69D /* BLCCameraToolbar.m */,
 				1CB48E2C1A09C7A900E0F69D /* BLCCameraViewController.h */,
 				1CB48E2D1A09C7A900E0F69D /* BLCCameraViewController.m */,
-				1CB48E3B1A0AC41900E0F69D /* BLCImageLibraryViewController.h */,
-				1CB48E3C1A0AC41900E0F69D /* BLCImageLibraryViewController.m */,
-				1CDAB38F19F1819A00A5FE11 /* BLCUser.h */,
-				1CDAB39019F1819A00A5FE11 /* BLCUser.m */,
-				1CDAB39319F1822400A5FE11 /* BLCMedia.h */,
-				1CDAB39419F1822400A5FE11 /* BLCMedia.m */,
+				1CB48E1F1A059AE600E0F69D /* BLCCircleSpinnerView.h */,
+				1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */,
 				1CDAB39619F182B000A5FE11 /* BLCComment.h */,
 				1CDAB39719F182B000A5FE11 /* BLCComment.m */,
 				1CB48E261A095F9800E0F69D /* BLCComposeCommentView.h */,
 				1CB48E271A095F9800E0F69D /* BLCComposeCommentView.m */,
-				1CDAB39919F1833000A5FE11 /* BLCDataSource.h */,
-				1CDAB39A19F1833000A5FE11 /* BLCDataSource.m */,
-				1C399E6219F5768100544087 /* BLCLoginViewController.h */,
-				1C399E6319F5768100544087 /* BLCLoginViewController.m */,
-				1CBF861819F8373900B31F53 /* BLCMediaFullScreenAnimator.h */,
-				1CBF861919F8373900B31F53 /* BLCMediaFullScreenAnimator.m */,
-				1CB48E1F1A059AE600E0F69D /* BLCCircleSpinnerView.h */,
-				1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */,
-				1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */,
-				1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */,
-				1CB48E291A09C4E200E0F69D /* BLCCameraToolbar.h */,
-				1CB48E2A1A09C4E200E0F69D /* BLCCameraToolbar.m */,
 				1CB48E351A0ABC0200E0F69D /* BLCCropBox.h */,
 				1CB48E361A0ABC0200E0F69D /* BLCCropBox.m */,
+				1CB48E381A0AC00700E0F69D /* BLCCropImageViewController.h */,
+				1CB48E391A0AC00700E0F69D /* BLCCropImageViewController.m */,
+				1CDAB39919F1833000A5FE11 /* BLCDataSource.h */,
+				1CDAB39A19F1833000A5FE11 /* BLCDataSource.m */,
+				1CB48E3B1A0AC41900E0F69D /* BLCImageLibraryViewController.h */,
+				1CB48E3C1A0AC41900E0F69D /* BLCImageLibraryViewController.m */,
+				1CDAB38C19F173C300A5FE11 /* BLCImagesTableViewController.h */,
+				1CDAB38D19F173C300A5FE11 /* BLCImagesTableViewController.m */,
+				1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */,
+				1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */,
+				1C399E6219F5768100544087 /* BLCLoginViewController.h */,
+				1C399E6319F5768100544087 /* BLCLoginViewController.m */,
+				1CDAB39319F1822400A5FE11 /* BLCMedia.h */,
+				1CDAB39419F1822400A5FE11 /* BLCMedia.m */,
+				1CBF861819F8373900B31F53 /* BLCMediaFullScreenAnimator.h */,
+				1CBF861919F8373900B31F53 /* BLCMediaFullScreenAnimator.m */,
+				1CBF861519F739A200B31F53 /* BLCMediaFullScreenViewController.h */,
+				1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */,
+				1CDAB39C19F18AA100A5FE11 /* BLCMediaTableViewCell.h */,
+				1CDAB39D19F18AA100A5FE11 /* BLCMediaTableViewCell.m */,
+				1C7718381A0D7903001F6D80 /* BLCPostToInstagramViewController.h */,
+				1C7718391A0D7903001F6D80 /* BLCPostToInstagramViewController.m */,
+				1CDAB38F19F1819A00A5FE11 /* BLCUser.h */,
+				1CDAB39019F1819A00A5FE11 /* BLCUser.m */,
 				1CB48E2F1A09F60A00E0F69D /* UIImage+BLCImageUtilities.h */,
 				1CB48E301A09F60A00E0F69D /* UIImage+BLCImageUtilities.m */,
 				1CB48E321A09FC3100E0F69D /* UIImage+BLCImageUtilitiesAll_In_One.h */,
@@ -369,7 +371,6 @@
 				1CDAB38B19F1738D00A5FE11 /* 10.jpg in Resources */,
 				1CDAB38919F1738D00A5FE11 /* 8.jpg in Resources */,
 				1CDAB38719F1738D00A5FE11 /* 6.jpg in Resources */,
-				1CDAB35D19F1683D00A5FE11 /* Main.storyboard in Resources */,
 				1CDAB38619F1738D00A5FE11 /* 5.jpg in Resources */,
 				1CDAB38519F1738D00A5FE11 /* 4.jpg in Resources */,
 				1CDAB38219F1738D00A5FE11 /* 1.jpg in Resources */,
@@ -446,6 +447,7 @@
 				1CDAB39119F1819A00A5FE11 /* BLCUser.m in Sources */,
 				1CB48E2B1A09C4E200E0F69D /* BLCCameraToolbar.m in Sources */,
 				1CDAB39B19F1833000A5FE11 /* BLCDataSource.m in Sources */,
+				1C77183A1A0D7903001F6D80 /* BLCPostToInstagramViewController.m in Sources */,
 				1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */,
 				1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */,
 				1CDAB39819F182B000A5FE11 /* BLCComment.m in Sources */,
@@ -473,14 +475,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1CDAB35B19F1683D00A5FE11 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CDAB35C19F1683D00A5FE11 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1CDAB36019F1683D00A5FE11 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
