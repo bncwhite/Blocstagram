@@ -17,6 +17,9 @@
 #import "BLCCameraViewController.h"
 #import "BLCImageLibraryViewController.h"
 #import "BLCPostToInstagramViewController.h"
+#import <Availability.h>
+
+#define isPhone ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 
 @interface BLCImagesTableViewController () <BLCMediaTableViewCellDelegate, UIViewControllerTransitioningDelegate, BLCMediaFullScreenViewControllerDelegate, BLCCameraViewControllerDelegate, BLCImageLibraryViewControllerDelegate>
 
@@ -58,6 +61,11 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(imageDidFinish:)
+                                                 name:BLCImageFinishedNotification
+                                               object:nil];
     
 }
 
@@ -118,7 +126,14 @@
     }
     if (imageVC) {
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:imageVC];
-        [self presentViewController:nav animated:YES completion:nil];
+        
+        if (isPhone) {
+            [self presentViewController:nav animated:YES completion:nil];
+        } else {
+            self.cameraPopover = [[UIPopoverController alloc] initWithContentViewController:nav];
+            self.cameraPopover.popoverContentSize = CGSizeMake(320, 568);
+            [self.cameraPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
     }
     
     return;
@@ -130,7 +145,13 @@
         
         [nav pushViewController:postVC animated:YES];
     } else {
-        [nav dismissViewControllerAnimated:YES completion:nil];
+        
+        if (isPhone) {
+            [nav dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.cameraPopover dismissPopoverAnimated:YES];
+            self.cameraPopover = nil;
+        }
     }
 }
 
@@ -264,6 +285,13 @@
     }
 }
 
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self.cameraPopover dismissPopoverAnimated:YES];
+    self.cameraPopover = nil;
+    [self cell:self.lastTouchedCell didLongPressImageView:self.lastTouchedImageView];
+}
+
 #pragma mark BLCMediaFullScreenViewControllerDelegate
 - (void) shareMediaNow
 {
@@ -314,8 +342,12 @@
     
     BLCMediaFullScreenViewController *fullScreenVC = [[BLCMediaFullScreenViewController alloc] initWithMedia:cell.mediaItem];
     
-    fullScreenVC.transitioningDelegate = self;
-    fullScreenVC.modalPresentationStyle = UIModalPresentationCustom;
+    if (isPhone) {
+        fullScreenVC.transitioningDelegate = self;
+        fullScreenVC.modalPresentationStyle = UIModalPresentationCustom;
+    } else {
+        fullScreenVC.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
     fullScreenVC.delegate = self;
     
     [self presentViewController:fullScreenVC animated:YES completion:nil];
@@ -333,8 +365,20 @@
     }
     
     if (itemsToShare.count > 0) {
+        
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
-        [self presentViewController:activityVC animated:YES completion:nil];
+        
+        if (isPhone) {
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+            [self presentViewController:activityVC animated:YES completion:nil];
+        } else {
+            self.lastTouchedCell = cell;
+            self.lastTouchedImageView = imageView;
+            self.cameraPopover = [[UIPopoverController alloc] initWithContentViewController:activityVC];
+            self.cameraPopover.popoverContentSize = CGSizeMake(320, 568);
+            [self.cameraPopover presentPopoverFromRect:imageView.frame inView:cell permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+            //[self.cameraPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        }
     }
 }
 
@@ -455,6 +499,17 @@
         self.tableView.contentInset = contentInsets;
         self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
     } completion:nil];
+}
+
+#pragma mark - Popover Handling
+
+- (void) imageDidFinish:(NSNotification *)notification {
+    if (isPhone) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.cameraPopover dismissPopoverAnimated:YES];
+        self.cameraPopover = nil;
+    }
 }
 
 /*

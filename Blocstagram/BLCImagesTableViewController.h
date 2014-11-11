@@ -14,5 +14,8 @@
 @property (nonatomic) BLCMediaTableViewCell *desiredCell;
 @property (nonatomic, weak) UIView *lastSelectedCommentView;
 @property (nonatomic, assign) CGFloat lastKeyboardAdjustment;
+@property (nonatomic, strong) BLCMediaTableViewCell *lastTouchedCell;
+@property (nonatomic, strong) UIImageView *lastTouchedImageView;
+@property (nonatomic, strong) UIPopoverController *cameraPopover;
 
 @end
