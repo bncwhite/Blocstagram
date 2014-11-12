@@ -145,7 +145,7 @@ static NSParagraphStyle *paragraphStyle;
     
     layoutCell.mediaItem = mediaItem;
     layoutCell.frame = CGRectMake(0, 0, width, CGRectGetHeight(layoutCell.frame));
-        
+    
     [layoutCell setNeedsLayout];
     [layoutCell layoutIfNeeded];
     

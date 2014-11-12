@@ -10,6 +10,13 @@
 		1C399E6419F5768100544087 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C399E6319F5768100544087 /* BLCLoginViewController.m */; };
 		1C4588D81A0D915700B07B2C /* BLCPostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4588D71A0D915700B07B2C /* BLCPostToInstagramViewController.m */; };
 		1C4588DB1A0E021400B07B2C /* BLCImageFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4588DA1A0E021400B07B2C /* BLCImageFilterCell.m */; };
+		1C509A841A12D17B002F4E4D /* BLCCommentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C509A831A12D17B002F4E4D /* BLCCommentTests.m */; };
+		1C509A861A12D273002F4E4D /* BLCMediaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C509A851A12D273002F4E4D /* BLCMediaTests.m */; };
+		1C509A881A13116D002F4E4D /* BLCComposeCommentViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C509A871A13116D002F4E4D /* BLCComposeCommentViewTests.m */; };
+		1C509A8A1A131341002F4E4D /* BLCMediaTableViewCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C509A891A131341002F4E4D /* BLCMediaTableViewCellTests.m */; };
+		1C509A8E1A1314E8002F4E4D /* captainActors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C509A8B1A1314E8002F4E4D /* captainActors.jpg */; };
+		1C509A8F1A1314E8002F4E4D /* captainStarfleet.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1C509A8C1A1314E8002F4E4D /* captainStarfleet.jpeg */; };
+		1C509A901A1314E8002F4E4D /* starship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C509A8D1A1314E8002F4E4D /* starship.jpg */; };
 		1CB48E211A059AE600E0F69D /* BLCCircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */; };
 		1CB48E241A05A83C00E0F69D /* BLCLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E231A05A83C00E0F69D /* BLCLikeButton.m */; };
 		1CB48E281A095F9800E0F69D /* BLCComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E271A095F9800E0F69D /* BLCComposeCommentView.m */; };
@@ -20,6 +27,7 @@
 		1CB48E371A0ABC0200E0F69D /* BLCCropBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E361A0ABC0200E0F69D /* BLCCropBox.m */; };
 		1CB48E3A1A0AC00700E0F69D /* BLCCropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E391A0AC00700E0F69D /* BLCCropImageViewController.m */; };
 		1CB48E3D1A0AC41900E0F69D /* BLCImageLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CB48E3C1A0AC41900E0F69D /* BLCImageLibraryViewController.m */; };
+		1CBD56C61A11BAB000D6B0E5 /* BLCUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBD56C51A11BAB000D6B0E5 /* BLCUserTests.m */; };
 		1CBF861719F739A200B31F53 /* BLCMediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */; };
 		1CBF861A19F8373900B31F53 /* BLCMediaFullScreenAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF861919F8373900B31F53 /* BLCMediaFullScreenAnimator.m */; };
 		1CDAB35419F1683D00A5FE11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAB35319F1683D00A5FE11 /* main.m */; };
@@ -66,6 +74,13 @@
 		1C4588D71A0D915700B07B2C /* BLCPostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCPostToInstagramViewController.m; sourceTree = "<group>"; };
 		1C4588D91A0E021400B07B2C /* BLCImageFilterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCImageFilterCell.h; sourceTree = "<group>"; };
 		1C4588DA1A0E021400B07B2C /* BLCImageFilterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCImageFilterCell.m; sourceTree = "<group>"; };
+		1C509A831A12D17B002F4E4D /* BLCCommentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCCommentTests.m; path = ../BLCCommentTests.m; sourceTree = "<group>"; };
+		1C509A851A12D273002F4E4D /* BLCMediaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTests.m; sourceTree = "<group>"; };
+		1C509A871A13116D002F4E4D /* BLCComposeCommentViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComposeCommentViewTests.m; sourceTree = "<group>"; };
+		1C509A891A131341002F4E4D /* BLCMediaTableViewCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaTableViewCellTests.m; sourceTree = "<group>"; };
+		1C509A8B1A1314E8002F4E4D /* captainActors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = captainActors.jpg; sourceTree = "<group>"; };
+		1C509A8C1A1314E8002F4E4D /* captainStarfleet.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = captainStarfleet.jpeg; sourceTree = "<group>"; };
+		1C509A8D1A1314E8002F4E4D /* starship.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = starship.jpg; sourceTree = "<group>"; };
 		1CB48E1F1A059AE600E0F69D /* BLCCircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCCircleSpinnerView.h; path = Blocstagram/BLCCircleSpinnerView.h; sourceTree = "<group>"; };
 		1CB48E201A059AE600E0F69D /* BLCCircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCCircleSpinnerView.m; path = Blocstagram/BLCCircleSpinnerView.m; sourceTree = "<group>"; };
 		1CB48E221A05A83C00E0F69D /* BLCLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLikeButton.h; sourceTree = "<group>"; };
@@ -86,6 +101,7 @@
 		1CB48E391A0AC00700E0F69D /* BLCCropImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCCropImageViewController.m; sourceTree = "<group>"; };
 		1CB48E3B1A0AC41900E0F69D /* BLCImageLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCImageLibraryViewController.h; sourceTree = "<group>"; };
 		1CB48E3C1A0AC41900E0F69D /* BLCImageLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCImageLibraryViewController.m; sourceTree = "<group>"; };
+		1CBD56C51A11BAB000D6B0E5 /* BLCUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCUserTests.m; path = ../BLCUserTests.m; sourceTree = "<group>"; };
 		1CBF861519F739A200B31F53 /* BLCMediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaFullScreenViewController.h; sourceTree = "<group>"; };
 		1CBF861619F739A200B31F53 /* BLCMediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMediaFullScreenViewController.m; sourceTree = "<group>"; };
 		1CBF861819F8373900B31F53 /* BLCMediaFullScreenAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMediaFullScreenAnimator.h; sourceTree = "<group>"; };
@@ -198,6 +214,11 @@
 			isa = PBXGroup;
 			children = (
 				1CDAB36D19F1683D00A5FE11 /* BlocstagramTests.m */,
+				1C509A831A12D17B002F4E4D /* BLCCommentTests.m */,
+				1C509A871A13116D002F4E4D /* BLCComposeCommentViewTests.m */,
+				1C509A891A131341002F4E4D /* BLCMediaTableViewCellTests.m */,
+				1C509A851A12D273002F4E4D /* BLCMediaTests.m */,
+				1CBD56C51A11BAB000D6B0E5 /* BLCUserTests.m */,
 				1CDAB36B19F1683D00A5FE11 /* Supporting Files */,
 			);
 			path = BlocstagramTests;
@@ -214,6 +235,9 @@
 		1CDAB37719F1736800A5FE11 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C509A8B1A1314E8002F4E4D /* captainActors.jpg */,
+				1C509A8C1A1314E8002F4E4D /* captainStarfleet.jpeg */,
+				1C509A8D1A1314E8002F4E4D /* starship.jpg */,
 				1CDAB37819F1738D00A5FE11 /* 1.jpg */,
 				1CDAB37919F1738D00A5FE11 /* 2.jpg */,
 				1CDAB37A19F1738D00A5FE11 /* 3.jpg */,
@@ -376,13 +400,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C509A8F1A1314E8002F4E4D /* captainStarfleet.jpeg in Resources */,
 				1CDAB38B19F1738D00A5FE11 /* 10.jpg in Resources */,
 				1CDAB38919F1738D00A5FE11 /* 8.jpg in Resources */,
 				1CDAB38719F1738D00A5FE11 /* 6.jpg in Resources */,
 				1CDAB35D19F1683D00A5FE11 /* Main.storyboard in Resources */,
 				1CDAB38619F1738D00A5FE11 /* 5.jpg in Resources */,
 				1CDAB38519F1738D00A5FE11 /* 4.jpg in Resources */,
+				1C509A8E1A1314E8002F4E4D /* captainActors.jpg in Resources */,
 				1CDAB38219F1738D00A5FE11 /* 1.jpg in Resources */,
+				1C509A901A1314E8002F4E4D /* starship.jpg in Resources */,
 				1CDAB38319F1738D00A5FE11 /* 2.jpg in Resources */,
 				1CDAB38419F1738D00A5FE11 /* 3.jpg in Resources */,
 				1CDAB38819F1738D00A5FE11 /* 7.jpg in Resources */,
@@ -470,7 +497,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBD56C61A11BAB000D6B0E5 /* BLCUserTests.m in Sources */,
 				1CDAB36E19F1683D00A5FE11 /* BlocstagramTests.m in Sources */,
+				1C509A8A1A131341002F4E4D /* BLCMediaTableViewCellTests.m in Sources */,
+				1C509A881A13116D002F4E4D /* BLCComposeCommentViewTests.m in Sources */,
+				1C509A861A12D273002F4E4D /* BLCMediaTests.m in Sources */,
+				1C509A841A12D17B002F4E4D /* BLCCommentTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
